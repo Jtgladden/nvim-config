@@ -55,3 +55,35 @@ ls.add_snippets("tex", {
   }))
 })
 
+ls.add_snippets("tex", {
+  s("short", fmt([[
+\documentclass[12pt]{{article}}
+\usepackage[T1]{{fontenc}}
+\usepackage{{times}}
+\usepackage{{setspace}}
+\usepackage{{geometry}}
+\geometry{{margin=1in}}
+
+\begin{{document}}
+
+\noindent
+\textbf{{Name:}} {} \\
+\textbf{{Class:}} {} \\
+\textbf{{Date:}} {}
+
+\begin{{center}}
+  \large\textbf{{{}}}
+\end{{center}}
+
+{}
+
+\end{{document}}
+  ]], {
+      i(1, "Your Name"),
+      i(2, "Class Name"),
+      i(3, "\\today"),
+      i(4, "Title of Your Paper"),
+      i(5, "Body text goes here...")
+  }))
+})
+
