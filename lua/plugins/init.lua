@@ -20,6 +20,21 @@ require("lazy").setup({
     -- Core plugins
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
+    
+
+  -- Telescope 
+  {"nvim-telescope/telescope.nvim",
+      tag = "0.1.8",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
+
+  {"nvim-telescope/telescope-media-files.nvim",
+      dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").load_extension("media_files")
+      end,
+    },
+
 
   -- LaTeX
   "lervag/vimtex",
@@ -46,5 +61,6 @@ require("plugins.cmp")
 require("plugins.lsp")
 require("plugins.autopairs")
 require("plugins.luasnip")
+require("plugins.telescope")
 
 
