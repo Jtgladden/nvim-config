@@ -16,6 +16,12 @@ telescope.setup({
   },
 })
 
+-- Try loading local Telescope overrides (ignored by git)
+local local_telescope = vim.fn.stdpath("config") .. "/lua/plugins/local_telescope.lua"
+if vim.fn.filereadable(local_telescope) == 1 then
+  dofile(local_telescope)
+end
+
 -- Keymaps
 -- Optional keymaps for generic Telescope commands
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -25,12 +31,12 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help" })
 
 
 -- Home directory search
-vim.keymap.set("n", "<leader>fa", function()
-  builtin.find_files({
-    cwd = vim.loop.os_homedir(),
-    prompt_title = "Home Directory Files"
-  })
-end, { desc = "Find files from home" })
+-- vim.keymap.set("n", "<leader>fa", function()
+--   builtin.find_files({
+--     cwd = vim.loop.os_homedir(),
+--     prompt_title = "Home Directory Files"
+--   })
+-- end, { desc = "Find files from home" })
 
 -- OneDrive search
 vim.keymap.set("n", "<leader>fo", function()
