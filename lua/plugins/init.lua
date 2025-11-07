@@ -52,7 +52,14 @@ require("lazy").setup({
   dependencies = {
     "saadparwaiz1/cmp_luasnip",  -- connects LuaSnip with nvim-cmp
   },
-  "rafamadriz/friendly-snippets" -- community snippets 
+  "rafamadriz/friendly-snippets", -- community snippets 
+
+  {"nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+   },
+    
+   "karb94/neoscroll.nvim"
+
 })
 
 require("plugins.vimtex")
@@ -62,5 +69,6 @@ require("plugins.lsp")
 require("plugins.autopairs")
 require("plugins.luasnip")
 require("plugins.telescope")
-
+require("plugins.treesitter")
+require("plugins.neoscroll")
 
