@@ -14,6 +14,10 @@ require("core.keymaps")
 -- =========================
 require("plugins")
 
+-- Load ChatGPT module
+require("chatgpt")
+
+
 
 -- vim.env.NVIM_LISTEN_ADDRESS = "/tmp/nvim"
 

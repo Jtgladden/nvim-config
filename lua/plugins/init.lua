@@ -58,7 +58,9 @@ require("lazy").setup({
     build = ":TSUpdate",
    },
     
-   "karb94/neoscroll.nvim"
+   "karb94/neoscroll.nvim",
+
+   "vim-scripts/AnsiEsc.vim"
 
 })
 
