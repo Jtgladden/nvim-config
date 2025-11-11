@@ -62,17 +62,28 @@ ls.add_snippets("tex", {
 \usepackage{{times}}
 \usepackage{{setspace}}
 \usepackage{{geometry}}
-\geometry{{margin=1in}}
+\usepackage[
+  paper=letterpaper,
+  top=1in,
+  bottom=1in,
+  left=1in,
+  right=1in,
+  includehead,
+  includefoot
+]{{geometry}}
+\setlength{{\headheight}}{{0pt}}
+\setlength{{\headsep}}{{0pt}}
+\doublespacing
 
 \begin{{document}}
 
 \noindent
-\textbf{{Name:}} {} \\
-\textbf{{Class:}} {} \\
-\textbf{{Date:}} {}
+{} \\
+{} \\
+{}
 
 \begin{{center}}
-  \large\textbf{{{}}}
+  \textbf{{{}}}
 \end{{center}}
 
 {}

@@ -34,5 +34,12 @@ vim.keymap.set({"i", "s"}, "<S-Tab>", function()
   end
 end, {expr = true, silent = true})
 
+
+-- Exit snippet mode
+vim.keymap.set({"i", "s"}, "<C-e>", function()
+  require("luasnip").unlink_current()
+end, {silent = true})
+
+
 require("snippets.latex")
 
