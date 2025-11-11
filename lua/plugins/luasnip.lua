@@ -35,10 +35,17 @@ vim.keymap.set({"i", "s"}, "<S-Tab>", function()
 end, {expr = true, silent = true})
 
 
--- Exit snippet mode
+-- Exit snippet mode or scroll normally
 vim.keymap.set({"i", "s"}, "<C-e>", function()
-  require("luasnip").unlink_current()
-end, {silent = true})
+  local ls = require("luasnip")
+  if ls.in_snippet() then
+    ls.unlink_current()
+  else
+    -- Fallback: perform default scroll-down behavior
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-e>", true, false, true), "n", false)
+  end
+end, {silent = true, noremap = true, desc = "Exit LuaSnip snippet mode"})
+
 
 
 require("snippets.latex")
