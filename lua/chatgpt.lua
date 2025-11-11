@@ -191,7 +191,7 @@ function M.SaveChat()
 
     -- Prepare filename with timestamp
     local timestamp = os.date("%Y%m%d_%H%M%S")
-    local chat_file = string.format("%s/%s_%s.txt", chats_dir, chat_name, timestamp)
+    local chat_file = string.format("%s/%s_%s.chat", chats_dir, chat_name, timestamp)
 
     -- Write messages to file
     local f = io.open(chat_file, "w")
