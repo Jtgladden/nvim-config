@@ -61,15 +61,13 @@ ls.add_snippets("tex", {
 \usepackage[T1]{{fontenc}}
 \usepackage{{times}}
 \usepackage{{setspace}}
-\usepackage{{geometry}}
 \usepackage[
   paper=letterpaper,
   top=1in,
   bottom=1in,
   left=1in,
   right=1in,
-  includehead,
-  includefoot
+  includehead
 ]{{geometry}}
 \setlength{{\headheight}}{{0pt}}
 \setlength{{\headsep}}{{0pt}}
